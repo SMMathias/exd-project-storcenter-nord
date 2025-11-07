@@ -12,5 +12,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Gates of Fish</h1>
+    </header>
+    <main>
+      <!-- Infoskærmen -->
+      <section id="info-screen" class="hidden"></section>
+      <h2>Om fiskene</h2>
+      <div class="fish-container">
+        <!-- Her viser vi med js lol-->
+      </div>
+      <!-- Character selection  -->
+      <section id="character-select" class="hidden">
+        <h2>Vælg din fisk</h2>
+        <div class="character-container">
+          <!-- Karakterer fisk -->
+        </div>
+        <button id="play-btn">Spil nu</button>
+      </section>
+      <section id="game-screen" class="hidden">
+        <canvas id="game-canvas"></canvas>
+        <button id="back-to-menu">Tilbage til menu</button>
+      </section>
+    </main>
+    <footer>
+      <button id="info-btn">Info</button>
+      <button id="start-btn">Start spil</button>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
 </html>
