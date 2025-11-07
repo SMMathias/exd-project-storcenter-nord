@@ -5,6 +5,10 @@
 }
 
 :root {
+  /* Primære skrifttyper */
+  --font-primary: "Mali", cursive;
+  --font-secondary: "Cherry Bomb One", system-ui;
+
   /* ====== MALI FONT VARIABLER ====== */
   --font-mali: "Mali", cursive;
 
