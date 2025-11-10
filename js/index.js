@@ -32,12 +32,8 @@ const infoScreen = [
   },
 ];
 
-infoScreen.forEach((obj) => {
-  console.log("Viser", obj.objekt);
-});
-
 // Infocards array
-const infoCards = [
+const fishCards = [
   {
     fishName: "Kejserfisk",
     fishSize: "20-30 cm",
@@ -101,3 +97,26 @@ const infoCards = [
     funFact2: "Har fire tænder og knuser skaller fra krebsdyr og bløddyr.",
   },
 ];
+
+const infoBtn = document.getElementById("infoBtn");
+
+infoBtn.addEventListener("click", function () {
+  this.classList.remove("hidden");
+});
+
+fishCards.forEach((fish) => {
+  const card = document.createElement("div");
+  card.classList.add("fishCard");
+
+  card.innerHTML = `
+    <h3>${fish.fishName}</h3>
+    <p>${fish.fishSize}</p>
+    <p>${fish.funFact1}</p>
+  `;
+
+  card.addEventListener("click", () => {
+    alert(`${fish.fishName}\n${fish.funFact2}`);
+  });
+
+  container.appendChild(card);
+});

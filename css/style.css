@@ -73,6 +73,7 @@ footer {
   font-family: var(--font-primary);
   letter-spacing: 0.2rem;
   background-color: ;
+  cursor: pointer;
 }
 
 .hidden {
