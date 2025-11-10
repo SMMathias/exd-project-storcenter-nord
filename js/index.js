@@ -11,7 +11,7 @@ const infoScreen = [
   },
   {
     id: "environment",
-    objekt: "Miljø (Baggrund + elementer)",
+    objekt: "environment (Baggrund + elementer)",
     relationer: { indeholder: ["sten", "koraller", "muslinger", "fish-card"] },
     cta: [],
     attributter: { grafik: "", farver: [], animation: "" },

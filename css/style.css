@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+body {
+}
 :root {
   /* Primære skrifttyper */
   --font-secondary: "Mali", cursive;
@@ -22,6 +24,25 @@
   /* ====== CHERRY BOMB ONE VARIABLER ====== */
   --font-cherry: "Cherry Bomb One", system-ui;
   --cherry-regular: 400;
+
+  /* Farver  */
+  --color--background: #cff7ff;
+}
+
+h1 {
+  font-family: var(--font-primary);
+  letter-spacing: 0.2em;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color--background);
+  background-image: url("../img/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 header {
@@ -29,11 +50,19 @@ header {
   justify-content: center;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
   padding-left: 200px;
   padding-right: 200px;
+  margin-bottom: 30px;
 }
 
 /* Knapper */
