@@ -99,9 +99,10 @@ const fishCards = [
 ];
 
 const infoBtn = document.getElementById("infoBtn");
+const fishContainer = document.getElementById("infoScreen");
 
 infoBtn.addEventListener("click", function () {
-  this.classList.remove("hidden");
+  fishContainer.classList.toggle("hidden");
 });
 
 fishCards.forEach((fish) => {
