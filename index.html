@@ -18,8 +18,7 @@
     </header>
     <main>
       <!-- Infoskærmen -->
-      <section id="infoScreen" class="hidden">
-        <h2>Om fiskene</h2>
+      <section id="infoScreen">
         <div class="fishContainer">
           <!-- Her viser vi med js lol-->
         </div>
@@ -41,9 +40,18 @@
     </main>
     <footer>
       <!-- info og sådan noget nonchalant noget -->
-      <button id="infoBtn" class="cta">Info</button>
       <button id="startBtn" class="cta">Start spil</button>
     </footer>
+    <div id="fishModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h2 id="modalName"></h2>
+        <img id="modalImage" alt="" />
+        <p id="modalSize"></p>
+        <p id="modalFact1"></p>
+        <p id="modalFact2"></p>
+      </div>
+    </div>
     <script src="js/index.js"></script>
   </body>
 </html>

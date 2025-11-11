@@ -59,9 +59,8 @@ main {
 
 footer {
   display: flex;
-  justify-content: space-between;
-  padding-left: 200px;
-  padding-right: 200px;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
 }
 
@@ -73,6 +72,66 @@ footer {
   font-family: var(--font-primary);
   letter-spacing: 0.2rem;
   background-color: ;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* INFO SCREEN  */
+#infoScreen {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 150px); /* fx træk højden af footeren fra */
+  overflow: hidden;
+}
+
+.fishCard img {
+  width: 150px; /* justér til fx 100–150 alt efter layout */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fishCard img:hover {
+  transform: scale(1.3);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  font-family: var(--font-secondary);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
   cursor: pointer;
 }
 
