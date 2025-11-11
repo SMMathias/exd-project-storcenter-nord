@@ -168,3 +168,64 @@ window.addEventListener("click", (e) => {
     modal.classList.add("hidden");
   }
 });
+
+// Spillet
+
+// dom-manipulation til game setup
+const canvas = document.getElementById("gameCanvas");
+
+// Gør spillet 2d :)
+const ctx = canvas.getContext("2d");
+canvas.width = 400;
+canvas.height = 600;
+
+let points = 0;
+let stars = [];
+let fishX = canvas.width / 2 - 25; // i midten af canvaset
+let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
+let fishWidth = 50;
+let fishHeight = 50;
+let fishSpeed = 6;
+
+// Tilføj gifs + array skal opdateres :=)
+
+// selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
+const fishImg = new Image();
+fishImg.src = // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array 
+
+const starImg = new Image();
+starImg.src = "img/points.svg";
+
+// laver stjerner
+function createStar() {
+  const x = Math.random() * (canvas.width - 40);
+  const y = -40;
+  stars.push({ x, y, size: 30 });
+}
+
+// tegner fisken (gif) + array skal opdateres :=)
+function drawFish() {
+  ctx.drawImage(fishImg, fishX, fishY, fishWidth, fishHeight); // vi tager fat i let variablerne ovenover her og vores fishImg const :)
+}
+
+// tegner spillet
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // rydder skærmen hver frame
+
+  // tegn stjerner
+  stars.forEach((star) => {
+    ctx.drawImage(starImg, star.x, star.y, star.size, star.size);
+  });
+
+  // opdater score
+  ctx.fillStyle = "black";
+  ctx.font = "20px Mali";
+  ctx.fillText(` ${points}`, 20, 30);
+}
+
+
+// lille smule eventlisteners
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft" && fishX > 0) fishX -= fishSpeed;
+  if (e.key === "ArrowRight" && fishX < canvas.width - fishWidth) fishX += fishSpeed;
+});
