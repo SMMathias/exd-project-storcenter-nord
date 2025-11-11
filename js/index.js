@@ -183,15 +183,15 @@ let points = 0;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
 let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
-let fishWidth = 50;
-let fishHeight = 50;
+let fishWidth = 70;
+let fishHeight = 70;
 let fishSpeed = 6;
 
 // Tilføj gifs + array skal opdateres :=)
 
 // selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
 const fishImg = new Image();
-fishImg.src = // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array 
+fishImg.src = "img/gobi.svg"; // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array
 
 const starImg = new Image();
 starImg.src = "img/points.svg";
@@ -212,6 +212,8 @@ function drawFish() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // rydder skærmen hver frame
 
+  drawFish();
+
   // tegn stjerner
   stars.forEach((star) => {
     ctx.drawImage(starImg, star.x, star.y, star.size, star.size);
@@ -220,12 +222,66 @@ function draw() {
   // opdater score
   ctx.fillStyle = "black";
   ctx.font = "20px Mali";
-  ctx.fillText(` ${points}`, 20, 30);
+  ctx.fillText(`${points}`, 20, 30);
 }
 
+// får stjerner til at beævæge sig nedad skærmen
+function updateStars() {
+  stars.forEach((star) => (star.y += 3)); // 3 er antallet af pixel pr frame
+  stars = stars.filter((star) => star.y < canvas.height + 20); // filter beholder kun stjerner, der stadig er i canvaset
+}
+
+// her tjekkes om en fisk rammer en stjerne
+function checkCollision() {
+  stars.forEach((star, i) => {
+    if (
+      fishX < star.x + star.size &&
+      fishX + fishWidth > star.x &&
+      fishY < star.y + star.size &&
+      fishY + fishHeight > star.y
+    ) {
+      stars.splice(i, 1); // her fjernes stjernen, hvis der er collision
+      points++; // giver pointsssss
+    }
+  });
+}
+
+// looper bare spillet igennem
+function gameLoop() {
+  updateStars(); // bevæg stjernerne
+  checkCollision(); // tjek om fisken rammer en
+  draw(); // tegn alt igen (fisk, stjerner, score) uendeligt yuurrrrr
+  requestAnimationFrame(gameLoop); // kør funktionen igen + 60 fps
+}
+
+setInterval(createStar, 1000); // stjerne hvet sekund
+gameLoop();
 
 // lille smule eventlisteners
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft" && fishX > 0) fishX -= fishSpeed;
-  if (e.key === "ArrowRight" && fishX < canvas.width - fishWidth) fishX += fishSpeed;
+  if (e.key === "ArrowRight" && fishX < canvas.width - fishWidth)
+    fishX += fishSpeed;
+});
+
+// OG til touch så vi kan teste begge:
+
+// Tilføj touch-styring
+let touchX = null;
+
+canvas.addEventListener("touchstart", (e) => {
+  touchX = e.touches[0].clientX;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  const newTouchX = e.touches[0].clientX;
+  const diff = newTouchX - touchX;
+
+  // Flyt fisken vandret
+  fishX += diff * 0.5; // multiplier styrer følsomheden
+  touchX = newTouchX;
+
+  // Begræns fisken så den ikke går udenfor canvas
+  if (fishX < 0) fishX = 0;
+  if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
 });
