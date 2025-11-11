@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-body {
-}
+
+
 :root {
   /* Primære skrifttyper */
   --font-secondary: "Mali", cursive;
@@ -71,7 +71,8 @@ footer {
   padding: 24px;
   font-family: var(--font-primary);
   letter-spacing: 0.2rem;
-  background-color: ;
+  background-color: #70BCF3;
+  box-shadow: 0 3px 1px black;
   cursor: pointer;
 }
 
