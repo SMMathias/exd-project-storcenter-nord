@@ -53,7 +53,7 @@ const fishCards = [
     funFact1: "Klovnefisk kan skifte køn, hvis hunnen dør eller forsvinder.",
     funFact2: "Klækker ud som små hanner og hunnerne er større end hannerne.",
     image: "klovnefisk.svg",
-    video:"klovnefisk-video-voiceover-one.mp4"
+    video:"klovnefisk-foley-bubble-true.mp4"
   },
   {
     fishName: "Kirurgfisk",
@@ -63,7 +63,7 @@ const fishCards = [
       "Har skarpe pigge på haleroden, der ligner kirurgiske skalpeller.",
     funFact2: "Er en farverig revfisk, der svømmer omkring koralrev.",
     image: "kirurgfisk.svg",
-    video:"kirurgfisk-animation-novoice.mp4"
+    video:"kirurg-animation-novoice.mp4"
   },
   {
     fishName: "Pudsefisk",
@@ -74,7 +74,7 @@ const fishCards = [
     funFact2:
       "Alle pudsefisk er født som hunner og kan skifte køn, når hannen forsvinder.",
     image: "pudsefisk.svg",
-    video:"clenaer-animation-novoice.mp4"
+    video:"cleaner-animation-novoice.mp4"
   },
   {
     fishName: "Blå chromis",
@@ -84,7 +84,7 @@ const fishCards = [
       "Den har en klar blå farve med sort stribe langs ryggen og forkedlet hale.",
     funFact2: "Lever hovedsageligt af små planktonorganismer.",
     image: "chromis.svg",
-    video:"chromi-animatio-novoice.mp4"
+    video:"chromi-animation-novoice.mp4"
   },
   {
     fishName: "Rævefjæs",
@@ -93,7 +93,7 @@ const fishCards = [
     funFact1: "Kendes på sin gul-orange krop og sort/hvide hoved.",
     funFact2: "Har svagt giftige pigstråler i ryggen som forsvar.",
     image: "raevefjaes.svg",
-    video:"foxface-animation-novoice.mp4"
+    video:"foxface-animatio-novoice.mp4"
   },
   {
     fishName: "Sandspiser-gobi",
@@ -102,7 +102,7 @@ const fishCards = [
     funFact1: "Kendt for at 'spise' sand for at finde føde.",
     funFact2: "Holder havbunden ren ved at filtrere sandet.",
     image: "gobi.svg",
-    video:"sandspisergobi-animation-novoice.mp4"
+    video:"sandspiser-animation-novoice.mp4"
   },
   {
     fishName: "Kuglefisk",
@@ -111,7 +111,7 @@ const fishCards = [
     funFact1: "Kan puste sig op til en kugle som forsvar.",
     funFact2: "Har fire tænder og knuser skaller fra krebsdyr og bløddyr.",
     image: "kuglefisk.svg",
-    video:"kuglefisk-animation-novoice.mp4"
+    video:"kugle-animation-novoice.mp4"
   },
 ];
 

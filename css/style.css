@@ -130,6 +130,12 @@ footer {
   margin-bottom: 10px;
 }
 
+#modalVideo {
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
 #closeModal {
   position: absolute;
   top: 20px;
@@ -141,3 +147,5 @@ footer {
 .hidden {
   display: none;
 }
+
+
