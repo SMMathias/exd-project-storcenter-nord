@@ -264,7 +264,7 @@ document.addEventListener("keydown", (e) => {
     fishX += fishSpeed;
 });
 
-// OG til touch så vi kan teste begge:
+// OG til touch så vi kan teste begge: https://smmathias.github.io/exd-project-storcenter-nord/
 
 // Tilføj touch-styring
 let touchX = null;
