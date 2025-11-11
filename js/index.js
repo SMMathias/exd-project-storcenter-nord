@@ -43,7 +43,8 @@ const fishCards = [
     funFact2:
       "Den ægte kejserfisk har en 'maske' over øjnene for at forvirre rovdyr.",
     image: "kejserfisk.svg",
-    video: "",
+    video: "emperor-animation-novoice.mp4"
+  
   },
   {
     fishName: "Klovnefisk",
@@ -52,7 +53,7 @@ const fishCards = [
     funFact1: "Klovnefisk kan skifte køn, hvis hunnen dør eller forsvinder.",
     funFact2: "Klækker ud som små hanner og hunnerne er større end hannerne.",
     image: "klovnefisk.svg",
-    video: "",
+    video:"klovnefisk-video-voiceover-one.mp4"
   },
   {
     fishName: "Kirurgfisk",
@@ -62,7 +63,7 @@ const fishCards = [
       "Har skarpe pigge på haleroden, der ligner kirurgiske skalpeller.",
     funFact2: "Er en farverig revfisk, der svømmer omkring koralrev.",
     image: "kirurgfisk.svg",
-    video: "",
+    video:"kirurgfisk-animation-novoice.mp4"
   },
   {
     fishName: "Pudsefisk",
@@ -73,7 +74,7 @@ const fishCards = [
     funFact2:
       "Alle pudsefisk er født som hunner og kan skifte køn, når hannen forsvinder.",
     image: "pudsefisk.svg",
-    video: "",
+    video:"clenaer-animation-novoice.mp4"
   },
   {
     fishName: "Blå chromis",
@@ -83,7 +84,7 @@ const fishCards = [
       "Den har en klar blå farve med sort stribe langs ryggen og forkedlet hale.",
     funFact2: "Lever hovedsageligt af små planktonorganismer.",
     image: "chromis.svg",
-    video: "",
+    video:"chromi-animatio-novoice.mp4"
   },
   {
     fishName: "Rævefjæs",
@@ -92,7 +93,7 @@ const fishCards = [
     funFact1: "Kendes på sin gul-orange krop og sort/hvide hoved.",
     funFact2: "Har svagt giftige pigstråler i ryggen som forsvar.",
     image: "raevefjaes.svg",
-    video: "",
+    video:"foxface-animation-novoice.mp4"
   },
   {
     fishName: "Sandspiser-gobi",
@@ -101,7 +102,7 @@ const fishCards = [
     funFact1: "Kendt for at 'spise' sand for at finde føde.",
     funFact2: "Holder havbunden ren ved at filtrere sandet.",
     image: "gobi.svg",
-    video: "",
+    video:"sandspisergobi-animation-novoice.mp4"
   },
   {
     fishName: "Kuglefisk",
@@ -110,7 +111,7 @@ const fishCards = [
     funFact1: "Kan puste sig op til en kugle som forsvar.",
     funFact2: "Har fire tænder og knuser skaller fra krebsdyr og bløddyr.",
     image: "kuglefisk.svg",
-    video: "",
+    video:"kuglefisk-animation-novoice.mp4"
   },
 ];
 
@@ -130,7 +131,7 @@ const positions = {
 const modal = document.getElementById("fishModal");
 const closeModal = document.getElementById("closeModal");
 const modalName = document.getElementById("modalName");
-const modalImage = document.getElementById("modalImage");
+const modalVideo = document.getElementById("modalVideo");
 const modalSize = document.getElementById("modalSize");
 const modalFact1 = document.getElementById("modalFact1");
 const modalFact2 = document.getElementById("modalFact2");
@@ -149,8 +150,7 @@ fishCards.forEach((fish) => {
 
   card.addEventListener("click", () => {
     modalName.textContent = fish.fishName;
-    modalImage.src = `img/${fish.image}`;
-    modalImage.alt = fish.fishName;
+    modalVideo.src = `video/${fish.video}`;
     modalSize.textContent = fish.fishSize;
     modalFact1.textContent = fish.funFact1;
     modalFact2.textContent = fish.funFact2;
@@ -169,11 +169,3 @@ window.addEventListener("click", (e) => {
     modal.classList.add("hidden");
   }
 });
-
-// Simon
-
-// Aske
-
-// Marie-Louise
-
-// Mathias
