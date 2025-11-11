@@ -76,7 +76,7 @@ const fishCards = [
     video: "cleaner-animation-novoice.mp4",
   },
   {
-    fishName: "Blå chromis",
+    fishName: "Blå-chromis",
     fishSize: "Op til 8 cm",
     fishHabitat: "Koralrev",
     funFact1:
@@ -118,12 +118,12 @@ const fishContainer = document.getElementById("infoScreen");
 
 const positions = {
   Kejserfisk: { left: "10%", top: "20%" },
-  Klovnefisk: { left: "40%", top: "30%" },
+  Klovnefisk: { left: "45%", top: "40%" },
   Kirurgfisk: { left: "65%", top: "40%" },
   Pudsefisk: { left: "25%", top: "55%" },
   "Blå chromis": { left: "75%", top: "25%" },
   Rævefjæs: { left: "15%", top: "70%" },
-  "Sandspiser-gobi": { left: "50%", top: "75%" },
+  "Sandspiser-gobi": { left: "10%", top: "90%", },
   Kuglefisk: { left: "80%", top: "60%" },
 };
 
@@ -138,6 +138,7 @@ const modalFact2 = document.getElementById("modalFact2");
 fishCards.forEach((fish) => {
   const card = document.createElement("div");
   card.classList.add("fishCard");
+  card.classList.add(fish.fishName);
 
   card.style.position = "absolute";
   card.style.left = positions[fish.fishName]?.left || "50%";
@@ -169,119 +170,119 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// // Spillet
+// Spillet
 
-// // dom-manipulation til game setup
-// const canvas = document.getElementById("gameCanvas");
+// dom-manipulation til game setup
+const canvas = document.getElementById("gameCanvas");
 
-// // Gør spillet 2d :)
-// const ctx = canvas.getContext("2d");
-// canvas.width = 400;
-// canvas.height = 600;
+// Gør spillet 2d :)
+const ctx = canvas.getContext("2d");
+canvas.width = 400;
+canvas.height = 600;
 
-// let points = 0;
-// let stars = [];
-// let fishX = canvas.width / 2 - 25; // i midten af canvaset
-// let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
-// let fishWidth = 70;
-// let fishHeight = 70;
-// let fishSpeed = 6;
+let points = 0;
+let stars = [];
+let fishX = canvas.width / 2 - 25; // i midten af canvaset
+let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
+let fishWidth = 70;
+let fishHeight = 70;
+let fishSpeed = 6;
 
-// // Tilføj gifs + array skal opdateres :=)
+// Tilføj gifs + array skal opdateres :=)
 
-// // selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
-// const fishImg = new Image();
-// fishImg.src = "img/gobi.svg"; // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array
+// selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
+const fishImg = new Image();
+fishImg.src = "img/gobi.svg"; // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array
 
-// const starImg = new Image();
-// starImg.src = "img/points.svg";
+const starImg = new Image();
+starImg.src = "img/points.svg";
 
-// // laver stjerner
-// function createStar() {
-//   const x = Math.random() * (canvas.width - 40);
-//   const y = -40;
-//   stars.push({ x, y, size: 30 });
-// }
+// laver stjerner
+function createStar() {
+  const x = Math.random() * (canvas.width - 40);
+  const y = -40;
+  stars.push({ x, y, size: 30 });
+}
 
-// // tegner fisken (gif) + array skal opdateres :=)
-// function drawFish() {
-//   ctx.drawImage(fishImg, fishX, fishY, fishWidth, fishHeight); // vi tager fat i let variablerne ovenover her og vores fishImg const :)
-// }
+// tegner fisken (gif) + array skal opdateres :=)
+function drawFish() {
+  ctx.drawImage(fishImg, fishX, fishY, fishWidth, fishHeight); // vi tager fat i let variablerne ovenover her og vores fishImg const :)
+}
 
-// // tegner spillet
-// function draw() {
-//   ctx.clearRect(0, 0, canvas.width, canvas.height); // rydder skærmen hver frame
+// tegner spillet
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // rydder skærmen hver frame
 
-//   drawFish();
+  drawFish();
 
-//   // tegn stjerner
-//   stars.forEach((star) => {
-//     ctx.drawImage(starImg, star.x, star.y, star.size, star.size);
-//   });
+  // tegn stjerner
+  stars.forEach((star) => {
+    ctx.drawImage(starImg, star.x, star.y, star.size, star.size);
+  });
 
-//   // opdater score
-//   ctx.fillStyle = "black";
-//   ctx.font = "20px Mali";
-//   ctx.fillText(`${points}`, 20, 30);
-// }
+  // opdater score
+  ctx.fillStyle = "black";
+  ctx.font = "20px Mali";
+  ctx.fillText(`${points}`, 20, 30);
+}
 
-// // får stjerner til at beævæge sig nedad skærmen
-// function updateStars() {
-//   stars.forEach((star) => (star.y += 3)); // 3 er antallet af pixel pr frame
-//   stars = stars.filter((star) => star.y < canvas.height + 20); // filter beholder kun stjerner, der stadig er i canvaset
-// }
+// får stjerner til at beævæge sig nedad skærmen
+function updateStars() {
+  stars.forEach((star) => (star.y += 3)); // 3 er antallet af pixel pr frame
+  stars = stars.filter((star) => star.y < canvas.height + 20); // filter beholder kun stjerner, der stadig er i canvaset
+}
 
-// // her tjekkes om en fisk rammer en stjerne
-// function checkCollision() {
-//   stars.forEach((star, i) => {
-//     if (
-//       fishX < star.x + star.size &&
-//       fishX + fishWidth > star.x &&
-//       fishY < star.y + star.size &&
-//       fishY + fishHeight > star.y
-//     ) {
-//       stars.splice(i, 1); // her fjernes stjernen, hvis der er collision
-//       points++; // giver pointsssss
-//     }
-//   });
-// }
+// her tjekkes om en fisk rammer en stjerne
+function checkCollision() {
+  stars.forEach((star, i) => {
+    if (
+      fishX < star.x + star.size &&
+      fishX + fishWidth > star.x &&
+      fishY < star.y + star.size &&
+      fishY + fishHeight > star.y
+    ) {
+      stars.splice(i, 1); // her fjernes stjernen, hvis der er collision
+      points++; // giver pointsssss
+    }
+  });
+}
 
-// // looper bare spillet igennem
-// function gameLoop() {
-//   updateStars(); // bevæg stjernerne
-//   checkCollision(); // tjek om fisken rammer en
-//   draw(); // tegn alt igen (fisk, stjerner, score) uendeligt yuurrrrr
-//   requestAnimationFrame(gameLoop); // kør funktionen igen + 60 fps
-// }
+// looper bare spillet igennem
+function gameLoop() {
+  updateStars(); // bevæg stjernerne
+  checkCollision(); // tjek om fisken rammer en
+  draw(); // tegn alt igen (fisk, stjerner, score) uendeligt yuurrrrr
+  requestAnimationFrame(gameLoop); // kør funktionen igen + 60 fps
+}
 
-// setInterval(createStar, 1000); // stjerne hvet sekund
-// gameLoop();
+setInterval(createStar, 1000); // stjerne hvet sekund
+gameLoop();
 
-// // lille smule eventlisteners
-// document.addEventListener("keydown", (e) => {
-//   if (e.key === "ArrowLeft" && fishX > 0) fishX -= fishSpeed;
-//   if (e.key === "ArrowRight" && fishX < canvas.width - fishWidth)
-//     fishX += fishSpeed;
-// });
+// lille smule eventlisteners
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft" && fishX > 0) fishX -= fishSpeed;
+  if (e.key === "ArrowRight" && fishX < canvas.width - fishWidth)
+    fishX += fishSpeed;
+});
 
-// // OG til touch så vi kan teste begge: https://smmathias.github.io/exd-project-storcenter-nord/
+// OG til touch så vi kan teste begge: https://smmathias.github.io/exd-project-storcenter-nord/
 
-// // Tilføj touch-styring
-// let touchX = null;
+// Tilføj touch-styring
+let touchX = null;
 
-// canvas.addEventListener("touchstart", (e) => {
-//   touchX = e.touches[0].clientX;
-// });
+canvas.addEventListener("touchstart", (e) => {
+  touchX = e.touches[0].clientX;
+});
 
-// canvas.addEventListener("touchmove", (e) => {
-//   const newTouchX = e.touches[0].clientX;
-//   const diff = newTouchX - touchX;
+canvas.addEventListener("touchmove", (e) => {
+  const newTouchX = e.touches[0].clientX;
+  const diff = newTouchX - touchX;
 
-//   // Flyt fisken vandret
-//   fishX += diff * 0.5; // multiplier styrer følsomheden
-//   touchX = newTouchX;
+  // Flyt fisken vandret
+  fishX += diff * 0.5; // multiplier styrer følsomheden
+  touchX = newTouchX;
 
-//   // Begræns fisken så den ikke går udenfor canvas
-//   if (fishX < 0) fishX = 0;
-//   if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
-// });
+  // Begræns fisken så den ikke går udenfor canvas
+  if (fishX < 0) fishX = 0;
+  if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
+});
