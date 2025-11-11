@@ -161,3 +161,11 @@ window.addEventListener("click", (e) => {
     modal.classList.add("hidden");
   }
 });
+
+// Simon
+
+// Aske
+
+// Marie-Louise
+
+// Mathias
