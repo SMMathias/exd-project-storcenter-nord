@@ -122,8 +122,8 @@ const select = document.getElementById("characterSelect");
 const choose = document.getElementById("chooseFish");
 // knapper
 
-// sounds for game 
-const soundCoin = new Audio ();
+// sounds for game
+const soundCoin = new Audio();
 soundCoin.src = "audio/foley-sound/coin-collect.wav";
 
 const soundClickBubble = new Audio();
@@ -151,6 +151,7 @@ backToMenu.addEventListener("click", function () {
   clearInterval(starInterval);
   starInterval = null;
   points = 0;
+  isGameOver = false;
   stars = [];
   infoScreen.classList.remove("hidden");
   gameScreen.classList.add("hidden");
@@ -244,7 +245,6 @@ characters.forEach((fish, index) => {
     <p>${fish.characName}</p>
   `;
 
-  let selectedFishIndex = 0;
   option.addEventListener("click", () => {
     selectedFishIndex = index;
     document
@@ -271,13 +271,14 @@ let points = 0;
 let gameRunning = false;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
-let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
-let fishWidth = 70;
-let fishHeight = 70;
+let fishY = canvas.height - 300; // lidt over bunden sådan ja kan altid justeresr
+let fishWidth = 220;
+let fishHeight = 220;
 let fishSpeed = 6;
 let starInterval;
 let lastStarTime = 0;
 let starSpawnDelay = 1000;
+let isGameOver = false;
 
 const fishImg = new Image();
 const starImg = new Image();
@@ -288,7 +289,7 @@ starImg.src = "img/points.svg";
 function createStar() {
   const x = Math.random() * (canvas.width - 40);
   const y = -40;
-  stars.push({ x, y, size: 30 });
+  stars.push({ x, y, size: 50 });
 }
 
 // tegner fisken (gif) + array skal opdateres :=)
@@ -315,8 +316,17 @@ function draw() {
 
 // får stjerner til at beævæge sig nedad skærmen
 function updateStars() {
-  stars.forEach((star) => (star.y += 3)); // 3 er antallet af pixel pr frame
-  stars = stars.filter((star) => star.y < canvas.height + 20); // filter beholder kun stjerner, der stadig er i canvaset
+  stars.forEach((star) => {
+    star.y += 3;
+
+    // Hvis stjerne rammer bunden → game over
+    if (star.y + star.size >= canvas.height) {
+      gameOver();
+    }
+  });
+
+  // Behold kun stjerner der stadig er på skærmen
+  stars = stars.filter((star) => star.y < canvas.height + 20);
 }
 
 // her tjekkes om en fisk rammer en stjerne
@@ -333,6 +343,28 @@ function checkCollision() {
       soundCoin.play();
     }
   });
+}
+
+function gameOver() {
+  if (isGameOver) return; // stop dobbelte game over
+  isGameOver = true;
+  gameRunning = false;
+
+  ctx.save();
+  ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "white";
+  ctx.font = "20px Mali";
+  ctx.fillText("Av av, du har tabt", canvas.width / 2 - 110, canvas.height / 2);
+  ctx.font = "10px Mali";
+  ctx.fillText(
+    "Tryk 'Tilbage til menu' for at starte igen",
+    canvas.width / 2 - 120,
+    canvas.height / 2 + 40
+  );
+  ctx.restore();
+  cancelAnimationFrame(animationFrameId); // stop den næste frame helt
 }
 
 // looper bare spillet igennem
