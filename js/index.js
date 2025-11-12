@@ -144,6 +144,7 @@ backToMenu.addEventListener("click", function () {
   gameScreen.classList.add("hidden");
   select.classList.add("hidden");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  startBtn.classList.remove("hidden");
 });
 
 const characters = [
