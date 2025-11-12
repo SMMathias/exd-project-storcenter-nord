@@ -1,36 +1,36 @@
 "use strict";
 
-// infoskærm
-const infoScreen = [
-  {
-    id: "fish-card",
-    objekt: "Fisk (Infokort)",
-    relationer: { åbner: "popup-infoboks", tilhører: "environment" },
-    cta: ["showInfo", "playSound"],
-    attributter: { navn: "", billede: "", fakta: [], lydfil: "" },
-  },
-  {
-    id: "environment",
-    objekt: "environment (Baggrund + elementer)",
-    relationer: { indeholder: ["sten", "koraller", "muslinger", "fish-card"] },
-    cta: [],
-    attributter: { grafik: "", farver: [], animation: "" },
-  },
-  {
-    id: "popup-infoboks",
-    objekt: "Pop-up Infoboks",
-    relationer: { viserInfoOm: "fish-card" },
-    cta: ["playSound", "close"],
-    attributter: { titel: "", tekst: "", lydknap: true, lukkeknap: true },
-  },
-  {
-    id: "menu",
-    objekt: "Menu / Startområde",
-    relationer: { linkerTil: ["spil", "infoscreen"] },
-    cta: ["startGame", "showInfo"],
-    attributter: { knap: "Start" },
-  },
-];
+// // infoskærm
+// const ooux = [
+//   {
+//     id: "fish-card",
+//     objekt: "Fisk (Infokort)",
+//     relationer: { åbner: "popup-infoboks", tilhører: "environment" },
+//     cta: ["showInfo", "playSound"],
+//     attributter: { navn: "", billede: "", fakta: [], lydfil: "" },
+//   },
+//   {
+//     id: "environment",
+//     objekt: "environment (Baggrund + elementer)",
+//     relationer: { indeholder: ["sten", "koraller", "muslinger", "fish-card"] },
+//     cta: [],
+//     attributter: { grafik: "", farver: [], animation: "" },
+//   },
+//   {
+//     id: "popup-infoboks",
+//     objekt: "Pop-up Infoboks",
+//     relationer: { viserInfoOm: "fish-card" },
+//     cta: ["playSound", "close"],
+//     attributter: { titel: "", tekst: "", lydknap: true, lukkeknap: true },
+//   },
+//   {
+//     id: "menu",
+//     objekt: "Menu / Startområde",
+//     relationer: { linkerTil: ["spil", "infoscreen"] },
+//     cta: ["startGame", "showInfo"],
+//     attributter: { knap: "Start" },
+//   },
+// ];
 
 // Infocards array
 const fishCards = [
@@ -123,7 +123,7 @@ const positions = {
   Pudsefisk: { left: "25%", top: "64%" },
   "Blå-chromis": { left: "75%", top: "10%" },
   Rævefjæs: { left: "70%", top: "76%" },
-  "Sandspiser-gobi": { left: "10%", top: "98%", },
+  "Sandspiser-gobi": { left: "10%", top: "98%" },
   Kuglefisk: { left: "80%", top: "60%" },
 };
 
@@ -285,4 +285,21 @@ canvas.addEventListener("touchmove", (e) => {
   // Begræns fisken så den ikke går udenfor canvas
   if (fishX < 0) fishX = 0;
   if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
+});
+
+const gameScreen = document.getElementById("gameScreen");
+const infoScreen = document.getElementById("infoScreen");
+const startBtn = document.getElementById("startBtn");
+const backToMenu = document.getElementById("backToMenu");
+
+// knapper
+
+startBtn.addEventListener("click", function () {
+  infoScreen.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
+});
+
+backToMenu.addEventListener("click", function () {
+  infoScreen.classList.remove("hidden");
+  gameScreen.classList.add("hidden");
 });
