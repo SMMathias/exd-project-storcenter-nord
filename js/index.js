@@ -264,8 +264,8 @@ const canvas = document.getElementById("gameCanvas");
 
 // Gør spillet 2d :)
 const ctx = canvas.getContext("2d");
-canvas.width = 600;
-canvas.height = 800;
+canvas.width = window.innerWidth * 0.8;
+canvas.height = window.innerHeight * 0.8;
 
 let points = 0;
 let gameRunning = false;
