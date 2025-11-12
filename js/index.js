@@ -264,16 +264,16 @@ const canvas = document.getElementById("gameCanvas");
 
 // Gør spillet 2d :)
 const ctx = canvas.getContext("2d");
-canvas.width = 400;
-canvas.height = 600;
+canvas.width = 600;
+canvas.height = 800;
 
 let points = 0;
 let gameRunning = false;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
 let fishY = canvas.height - 300; // lidt over bunden sådan ja kan altid justeresr
-let fishWidth = 220;
-let fishHeight = 220;
+let fishWidth = 70;
+let fishHeight = 70;
 let fishSpeed = 6;
 let starInterval;
 let lastStarTime = 0;
@@ -287,9 +287,11 @@ starImg.src = "img/points.svg";
 // ---------- SPILLE FUNKTIONEERRRRRRR-----------
 // laver stjerner
 function createStar() {
-  const x = Math.random() * (canvas.width - 40);
-  const y = -40;
-  stars.push({ x, y, size: 50 });
+  const spawnWidth = canvas.width * 0.2; // how wide the “column” of stars is
+  const minX = canvas.width / 2 - spawnWidth / 2;
+  const x = minX + Math.random() * spawnWidth - 10; // subtract half the star size to keep it visually centered
+  const y = -20;
+  stars.push({ x, y, size: 20 });
 }
 
 // tegner fisken (gif) + array skal opdateres :=)

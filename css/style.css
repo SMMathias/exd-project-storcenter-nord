@@ -159,10 +159,14 @@ footer {
 }
 
 #gameCanvas {
-  background: #b3ecff;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+    background: #b3ecff;
+    background-image: url("../img/game-baggrund-vector.svg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
 
 /* FISK STYLING TIL START INFOSKÆRM */
 
