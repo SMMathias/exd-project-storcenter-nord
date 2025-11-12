@@ -929,3 +929,16 @@ footer {
 .Kuglefisk {
   animation: swim3 20s linear infinite;
 }
+
+#characterSelect {
+  display: flex;
+}
+
+.characterOption img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain; /* Sørger for at billedet ikke bliver strukket */
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
