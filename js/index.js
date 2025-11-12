@@ -120,7 +120,6 @@ const startBtn = document.getElementById("startBtn");
 const backToMenu = document.getElementById("backToMenu");
 const select = document.getElementById("characterSelect");
 const choose = document.getElementById("chooseFish");
-
 // knapper
 
 startBtn.addEventListener("click", function () {
@@ -131,6 +130,7 @@ startBtn.addEventListener("click", function () {
 choose.addEventListener("click", function () {
   select.classList.add("hidden");
   gameScreen.classList.remove("hidden");
+  startGame();
 });
 
 backToMenu.addEventListener("click", function () {
@@ -140,17 +140,23 @@ backToMenu.addEventListener("click", function () {
 
 const characters = [
   {
-    characName: "Kejserfisk",
-    image: "kejserfisk.svg",
-    gif: "rabbitface-gif.gif",
-  },
-  { characName: "Gobi", image: "gobi.svg", gif: "gobifisk-gif-done.gif" },
-  {
     characName: "Kuglefisk",
     image: "kuglefisk.svg",
-    gif: "kuglefisk-gif-done.gif",
+    gif: "kuglefisk/kuglefisk-gif-done.gif",
+  },
+  {
+    characName: "Gobi",
+    image: "gobi.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  },
+  {
+    characName: "Kejserfisk",
+    image: "kejserfisk.svg",
+    gif: "rabbitfish/rabbitface-gif.gif",
   },
 ];
+
+let selectedFishIndex = 0;
 
 const fishContainer = document.getElementById("infoScreen");
 
@@ -209,13 +215,6 @@ window.addEventListener("click", (e) => {
 });
 
 // character selection
-let selectedFishIndex = 0;
-document.querySelectorAll(".characterOption").forEach((option, index) => {
-  option.addEventListener("click", () => {
-    selectedFishIndex = index;
-  });
-});
-
 characters.forEach((fish, index) => {
   const option = document.createElement("div"); // laver et nyt div-element
   option.classList.add("characterOption"); // giver det klassen
@@ -223,6 +222,13 @@ characters.forEach((fish, index) => {
     <img src="img/${fish.image}" alt="${fish.characName}">
     <p>${fish.characName}</p>
   `;
+
+  let selectedFishIndex = 0;
+  document.querySelectorAll(".characterOption").forEach((option, index) => {
+    option.addEventListener("click", () => {
+      selectedFishIndex = index;
+    });
+  });
 
   // når man klikker, vælges den fisk
   option.addEventListener("click", () => {
@@ -251,15 +257,11 @@ let fishWidth = 70;
 let fishHeight = 70;
 let fishSpeed = 6;
 
-// Tilføj gifs + array skal opdateres :=)
-
-// selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
 const fishImg = new Image();
-fishImg.src = `img/${characters[selectedFishIndex].gif}`;
-
 const starImg = new Image();
 starImg.src = "img/points.svg";
 
+// ---------- SPILLE FUNKTIONEERRRRRRR-----------
 // laver stjerner
 function createStar() {
   const x = Math.random() * (canvas.width - 40);
@@ -318,9 +320,6 @@ function gameLoop() {
   requestAnimationFrame(gameLoop); // kør funktionen igen + 60 fps
 }
 
-setInterval(createStar, 1000); // stjerne hvet sekund
-gameLoop();
-
 // lille smule eventlisteners
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft" && fishX > 0) fishX -= fishSpeed;
@@ -349,3 +348,14 @@ canvas.addEventListener("touchmove", (e) => {
   if (fishX < 0) fishX = 0;
   if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
 });
+
+function startGame() {
+  fishImg.src = `gif-copy/${characters[selectedFishIndex].gif}`;
+  if (!fishImg.src) {
+    console.warn("Kunne ikke finde gif i Image/. Tjek filnavn og sti.");
+  }
+  fishImg.onload = () => {
+    setInterval(createStar, 1000); // stjerne hvet sekund
+    gameLoop();
+  };
+}

@@ -25,7 +25,6 @@
 
   /* Farver  */
   --color--background: #cff7ff;
-
 }
 
 h1 {
@@ -154,7 +153,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../img/game-bg.svg") no-repeat center/cover;
+  /* background: url("../img/game-bg.svg") no-repeat center/cover; */
   width: 100%;
   height: 100vh;
 }
@@ -164,8 +163,6 @@ footer {
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* FISK STYLING TIL START INFOSKÆRM */
 
@@ -177,116 +174,131 @@ footer {
 
 /* keyframs for alle fisk som gør de kan animeres  */
 @keyframes swim1 {
-    0% {
-      transform: translate(0, 0) scaleX(1);
-    }
-
-    5% {
-      transform: translate(100px, -5px) scaleX(1);
-    }
-
-    10% {
-      transform: translate(200px, 0) scaleX(1);
-    }
-
-    15% {
-      transform: translate(300px, 5px) scaleX(1);
-    }
-
-    20% {
-      transform: translate(400px, 0) scaleX(1);
-    }
-
-    25% {
-      transform: translate(500px, -5px) scaleX(1);
-    }
-
-    30% {
-      transform: translate(600px, 0) scaleX(1);
-    }
-
-    35% {
-      transform: translate(700px, 5px) scaleX(1);
-    }
-
-    40% {
-      transform: translate(800px, 0) scaleX(1);
-    }
-
-    45% {
-      transform: translate(900px, -5px) scaleX(1);
-    }
-
-    50% {
-      transform: translate(1000px, 0) scaleX(-1);
-    }
-
-    55% {
-      transform: translate(900px, 5px) scaleX(-1);
-    }
-
-    60% {
-      transform: translate(800px, 0) scaleX(-1);
-    }
-
-    65% {
-      transform: translate(700px, -5px) scaleX(-1);
-    }
-
-    70% {
-      transform: translate(600px, 0) scaleX(-1);
-    }
-
-    75% {
-      transform: translate(500px, 5px) scaleX(-1);
-    }
-
-    80% {
-      transform: translate(400px, 0) scaleX(-1);
-    }
-
-    85% {
-      transform: translate(300px, -5px) scaleX(-1);
-    }
-
-    90% {
-      transform: translate(200px, 0) scaleX(-1);
-    }
-
-    95% {
-      transform: translate(100px, 5px) scaleX(-1);
-    }
-
-    100% {
-      transform: translate(0, 0) scaleX(1);
-    }
+  0% {
+    transform: translate(0, 0) scaleX(1);
   }
-  
+
+  5% {
+    transform: translate(100px, -5px) scaleX(1);
+  }
+
+  10% {
+    transform: translate(200px, 0) scaleX(1);
+  }
+
+  15% {
+    transform: translate(300px, 5px) scaleX(1);
+  }
+
+  20% {
+    transform: translate(400px, 0) scaleX(1);
+  }
+
+  25% {
+    transform: translate(500px, -5px) scaleX(1);
+  }
+
+  30% {
+    transform: translate(600px, 0) scaleX(1);
+  }
+
+  35% {
+    transform: translate(700px, 5px) scaleX(1);
+  }
+
+  40% {
+    transform: translate(800px, 0) scaleX(1);
+  }
+
+  45% {
+    transform: translate(900px, -5px) scaleX(1);
+  }
+
+  50% {
+    transform: translate(1000px, 0) scaleX(-1);
+  }
+
+  55% {
+    transform: translate(900px, 5px) scaleX(-1);
+  }
+
+  60% {
+    transform: translate(800px, 0) scaleX(-1);
+  }
+
+  65% {
+    transform: translate(700px, -5px) scaleX(-1);
+  }
+
+  70% {
+    transform: translate(600px, 0) scaleX(-1);
+  }
+
+  75% {
+    transform: translate(500px, 5px) scaleX(-1);
+  }
+
+  80% {
+    transform: translate(400px, 0) scaleX(-1);
+  }
+
+  85% {
+    transform: translate(300px, -5px) scaleX(-1);
+  }
+
+  90% {
+    transform: translate(200px, 0) scaleX(-1);
+  }
+
+  95% {
+    transform: translate(100px, 5px) scaleX(-1);
+  }
+
+  100% {
+    transform: translate(0, 0) scaleX(1);
+  }
+}
 
 @keyframes swim2 {
-0% {transform: translate(50px, 0px) scaleX(1);}
-
-  12.5% {transform: translate(35px, 35px) scaleX(1);}
-
-  25% {transform: translate(0px, 50px) scaleX(-1);}
-
-  37.5% {transform: translate(-35px, 35px) scaleX(-1);}
-
-  50% {transform: translate(-50px, 0px) scaleX(-1);}
-
-  62.5% {transform: translate(-35px, -35px) scaleX(-1);}
-
-  75% {transform: translate(0px, -50px) scaleX(1);}
-
-  87.5% {transform: translate(35px, -35px) scaleX(1);}
-
-  100% {transform: translate(50px, 0px) scaleX(1);}
+  0% {
+    transform: translate(50px, 0px) scaleX(1);
   }
 
+  12.5% {
+    transform: translate(35px, 35px) scaleX(1);
+  }
+
+  25% {
+    transform: translate(0px, 50px) scaleX(-1);
+  }
+
+  37.5% {
+    transform: translate(-35px, 35px) scaleX(-1);
+  }
+
+  50% {
+    transform: translate(-50px, 0px) scaleX(-1);
+  }
+
+  62.5% {
+    transform: translate(-35px, -35px) scaleX(-1);
+  }
+
+  75% {
+    transform: translate(0px, -50px) scaleX(1);
+  }
+
+  87.5% {
+    transform: translate(35px, -35px) scaleX(1);
+  }
+
+  100% {
+    transform: translate(50px, 0px) scaleX(1);
+  }
+}
 
 @keyframes swim3 {
-
-0% {
+  0% {
     transform: translate(0px, -80px);
   }
 
@@ -371,7 +383,7 @@ footer {
   }
 }
 @keyframes swim4 {
-0% {
+  0% {
     transform: translate(0, 0) scaleX(-1);
   }
 
@@ -454,352 +466,352 @@ footer {
   100% {
     transform: translate(0, 0) scaleX(-1);
   }
+}
+
+@keyframes swim5 {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
   }
 
-    @keyframes swim5 {
-      0% {
-        transform: translate(0, 0) scaleX(-1);
-      }
-  
-      5% {
-        transform: translate(-10px, -5px) scaleX(-1);
-      }
-  
-      10% {
-        transform: translate(-20px, 0) scaleX(-1);
-      }
-  
-      15% {
-        transform: translate(-30px, 5px) scaleX(-1);
-      }
-  
-      20% {
-        transform: translate(-40px, 0) scaleX(-1);
-      }
-  
-      25% {
-        transform: translate(-50px, -5px) scaleX(-1);
-      }
-  
-      30% {
-        transform: translate(-60px, 0) scaleX(-1);
-      }
-  
-      35% {
-        transform: translate(-70px, 5px) scaleX(-1);
-      }
-  
-      40% {
-        transform: translate(-80px, 0) scaleX(-1);
-      }
-  
-      45% {
-        transform: translate(-90px, -5px) scaleX(-1);
-      }
-  
-      50% {
-        transform: translate(-100px, 0) scaleX(1);
-      }
-  
-      55% {
-        transform: translate(-90px, 5px) scaleX(1);
-      }
-  
-      60% {
-        transform: translate(-80px, 0) scaleX(1);
-      }
-  
-      65% {
-        transform: translate(-70px, -5px) scaleX(1);
-      }
-  
-      70% {
-        transform: translate(-60px, 0) scaleX(1);
-      }
-  
-      75% {
-        transform: translate(-50px, 5px) scaleX(1);
-      }
-  
-      80% {
-        transform: translate(-40px, 0) scaleX(1);
-      }
-  
-      85% {
-        transform: translate(-30px, -5px) scaleX(1);
-      }
-  
-      90% {
-        transform: translate(-20px, 0) scaleX(1);
-      }
-  
-      95% {
-        transform: translate(-10px, 5px) scaleX(1);
-      }
-  
-      100% {
-        transform: translate(0, 0) scaleX(-1);
-      }
-    }
+  5% {
+    transform: translate(-10px, -5px) scaleX(-1);
+  }
 
-    @keyframes swim5 {
-      0% {
-        transform: translate(0, 0) scaleX(-1);
-      }
-  
-      5% {
-        transform: translate(-10px, -5px) scaleX(-1);
-      }
-  
-      10% {
-        transform: translate(-20px, 0) scaleX(-1);
-      }
-  
-      15% {
-        transform: translate(-30px, 5px) scaleX(-1);
-      }
-  
-      20% {
-        transform: translate(-40px, 0) scaleX(-1);
-      }
-  
-      25% {
-        transform: translate(-50px, -5px) scaleX(-1);
-      }
-  
-      30% {
-        transform: translate(-60px, 0) scaleX(-1);
-      }
-  
-      35% {
-        transform: translate(-70px, 5px) scaleX(-1);
-      }
-  
-      40% {
-        transform: translate(-80px, 0) scaleX(-1);
-      }
-  
-      45% {
-        transform: translate(-90px, -5px) scaleX(-1);
-      }
-  
-      50% {
-        transform: translate(-100px, 0) scaleX(1);
-      }
-  
-      55% {
-        transform: translate(-90px, 5px) scaleX(1);
-      }
-  
-      60% {
-        transform: translate(-80px, 0) scaleX(1);
-      }
-  
-      65% {
-        transform: translate(-70px, -5px) scaleX(1);
-      }
-  
-      70% {
-        transform: translate(-60px, 0) scaleX(1);
-      }
-  
-      75% {
-        transform: translate(-50px, 5px) scaleX(1);
-      }
-  
-      80% {
-        transform: translate(-40px, 0) scaleX(1);
-      }
-  
-      85% {
-        transform: translate(-30px, -5px) scaleX(1);
-      }
-  
-      90% {
-        transform: translate(-20px, 0) scaleX(1);
-      }
-  
-      95% {
-        transform: translate(-10px, 5px) scaleX(1);
-      }
-  
-      100% {
-        transform: translate(0, 0) scaleX(-1);
-      }
-    }
+  10% {
+    transform: translate(-20px, 0) scaleX(-1);
+  }
 
-        @keyframes swim6 {
-          0% {
-            transform: translate(0, 0) scaleX(-1);
-          }
-    
-          5% {
-            transform: translate(-30px, -5px) scaleX(-1);
-          }
-    
-          10% {
-            transform: translate(-60px, 0) scaleX(-1);
-          }
-    
-          15% {
-            transform: translate(-90px, 5px) scaleX(-1);
-          }
-    
-          20% {
-            transform: translate(-120px, 0) scaleX(-1);
-          }
-    
-          25% {
-            transform: translate(-150px, -5px) scaleX(-1);
-          }
-    
-          30% {
-            transform: translate(-180px, 0) scaleX(-1);
-          }
-    
-          35% {
-            transform: translate(-210px, 5px) scaleX(-1);
-          }
-    
-          40% {
-            transform: translate(-240px, 0) scaleX(-1);
-          }
-    
-          45% {
-            transform: translate(-270px, -5px) scaleX(-1);
-          }
-    
-          50% {
-            transform: translate(-300px, 0) scaleX(1);
-          }
-    
-          55% {
-            transform: translate(-270px, 5px) scaleX(1);
-          }
-    
-          60% {
-            transform: translate(-240px, 0) scaleX(1);
-          }
-    
-          65% {
-            transform: translate(-210px, -5px) scaleX(1);
-          }
-    
-          70% {
-            transform: translate(-180px, 0) scaleX(1);
-          }
-    
-          75% {
-            transform: translate(-150px, 5px) scaleX(1);
-          }
-    
-          80% {
-            transform: translate(-120px, 0) scaleX(1);
-          }
-    
-          85% {
-            transform: translate(-90px, -5px) scaleX(1);
-          }
-    
-          90% {
-            transform: translate(-60px, 0) scaleX(1);
-          }
-    
-          95% {
-            transform: translate(-30px, 5px) scaleX(1);
-          }
-    
-          100% {
-            transform: translate(0, 0) scaleX(-1);
-          }
-        }
+  15% {
+    transform: translate(-30px, 5px) scaleX(-1);
+  }
 
-                @keyframes swim6 {
-          0% {
-            transform: translate(0, 0) scaleX(-1);
-          }
-    
-          5% {
-            transform: translate(-30px, -5px) scaleX(-1);
-          }
-    
-          10% {
-            transform: translate(-60px, 0) scaleX(-1);
-          }
-    
-          15% {
-            transform: translate(-90px, 5px) scaleX(-1);
-          }
-    
-          20% {
-            transform: translate(-120px, 0) scaleX(-1);
-          }
-    
-          25% {
-            transform: translate(-150px, -5px) scaleX(-1);
-          }
-    
-          30% {
-            transform: translate(-180px, 0) scaleX(-1);
-          }
-    
-          35% {
-            transform: translate(-210px, 5px) scaleX(-1);
-          }
-    
-          40% {
-            transform: translate(-240px, 0) scaleX(-1);
-          }
-    
-          45% {
-            transform: translate(-270px, -5px) scaleX(-1);
-          }
-    
-          50% {
-            transform: translate(-300px, 0) scaleX(1);
-          }
-    
-          55% {
-            transform: translate(-270px, 5px) scaleX(1);
-          }
-    
-          60% {
-            transform: translate(-240px, 0) scaleX(1);
-          }
-    
-          65% {
-            transform: translate(-210px, -5px) scaleX(1);
-          }
-    
-          70% {
-            transform: translate(-180px, 0) scaleX(1);
-          }
-    
-          75% {
-            transform: translate(-150px, 5px) scaleX(1);
-          }
-    
-          80% {
-            transform: translate(-120px, 0) scaleX(1);
-          }
-    
-          85% {
-            transform: translate(-90px, -5px) scaleX(1);
-          }
-    
-          90% {
-            transform: translate(-60px, 0) scaleX(1);
-          }
-    
-          95% {
-            transform: translate(-30px, 5px) scaleX(1);
-          }
-    
-          100% {
-            transform: translate(0, 0) scaleX(-1);
-          }
-        }
-        
+  20% {
+    transform: translate(-40px, 0) scaleX(-1);
+  }
+
+  25% {
+    transform: translate(-50px, -5px) scaleX(-1);
+  }
+
+  30% {
+    transform: translate(-60px, 0) scaleX(-1);
+  }
+
+  35% {
+    transform: translate(-70px, 5px) scaleX(-1);
+  }
+
+  40% {
+    transform: translate(-80px, 0) scaleX(-1);
+  }
+
+  45% {
+    transform: translate(-90px, -5px) scaleX(-1);
+  }
+
+  50% {
+    transform: translate(-100px, 0) scaleX(1);
+  }
+
+  55% {
+    transform: translate(-90px, 5px) scaleX(1);
+  }
+
+  60% {
+    transform: translate(-80px, 0) scaleX(1);
+  }
+
+  65% {
+    transform: translate(-70px, -5px) scaleX(1);
+  }
+
+  70% {
+    transform: translate(-60px, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate(-50px, 5px) scaleX(1);
+  }
+
+  80% {
+    transform: translate(-40px, 0) scaleX(1);
+  }
+
+  85% {
+    transform: translate(-30px, -5px) scaleX(1);
+  }
+
+  90% {
+    transform: translate(-20px, 0) scaleX(1);
+  }
+
+  95% {
+    transform: translate(-10px, 5px) scaleX(1);
+  }
+
+  100% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+}
+
+@keyframes swim5 {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+
+  5% {
+    transform: translate(-10px, -5px) scaleX(-1);
+  }
+
+  10% {
+    transform: translate(-20px, 0) scaleX(-1);
+  }
+
+  15% {
+    transform: translate(-30px, 5px) scaleX(-1);
+  }
+
+  20% {
+    transform: translate(-40px, 0) scaleX(-1);
+  }
+
+  25% {
+    transform: translate(-50px, -5px) scaleX(-1);
+  }
+
+  30% {
+    transform: translate(-60px, 0) scaleX(-1);
+  }
+
+  35% {
+    transform: translate(-70px, 5px) scaleX(-1);
+  }
+
+  40% {
+    transform: translate(-80px, 0) scaleX(-1);
+  }
+
+  45% {
+    transform: translate(-90px, -5px) scaleX(-1);
+  }
+
+  50% {
+    transform: translate(-100px, 0) scaleX(1);
+  }
+
+  55% {
+    transform: translate(-90px, 5px) scaleX(1);
+  }
+
+  60% {
+    transform: translate(-80px, 0) scaleX(1);
+  }
+
+  65% {
+    transform: translate(-70px, -5px) scaleX(1);
+  }
+
+  70% {
+    transform: translate(-60px, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate(-50px, 5px) scaleX(1);
+  }
+
+  80% {
+    transform: translate(-40px, 0) scaleX(1);
+  }
+
+  85% {
+    transform: translate(-30px, -5px) scaleX(1);
+  }
+
+  90% {
+    transform: translate(-20px, 0) scaleX(1);
+  }
+
+  95% {
+    transform: translate(-10px, 5px) scaleX(1);
+  }
+
+  100% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+}
+
+@keyframes swim6 {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+
+  5% {
+    transform: translate(-30px, -5px) scaleX(-1);
+  }
+
+  10% {
+    transform: translate(-60px, 0) scaleX(-1);
+  }
+
+  15% {
+    transform: translate(-90px, 5px) scaleX(-1);
+  }
+
+  20% {
+    transform: translate(-120px, 0) scaleX(-1);
+  }
+
+  25% {
+    transform: translate(-150px, -5px) scaleX(-1);
+  }
+
+  30% {
+    transform: translate(-180px, 0) scaleX(-1);
+  }
+
+  35% {
+    transform: translate(-210px, 5px) scaleX(-1);
+  }
+
+  40% {
+    transform: translate(-240px, 0) scaleX(-1);
+  }
+
+  45% {
+    transform: translate(-270px, -5px) scaleX(-1);
+  }
+
+  50% {
+    transform: translate(-300px, 0) scaleX(1);
+  }
+
+  55% {
+    transform: translate(-270px, 5px) scaleX(1);
+  }
+
+  60% {
+    transform: translate(-240px, 0) scaleX(1);
+  }
+
+  65% {
+    transform: translate(-210px, -5px) scaleX(1);
+  }
+
+  70% {
+    transform: translate(-180px, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate(-150px, 5px) scaleX(1);
+  }
+
+  80% {
+    transform: translate(-120px, 0) scaleX(1);
+  }
+
+  85% {
+    transform: translate(-90px, -5px) scaleX(1);
+  }
+
+  90% {
+    transform: translate(-60px, 0) scaleX(1);
+  }
+
+  95% {
+    transform: translate(-30px, 5px) scaleX(1);
+  }
+
+  100% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+}
+
+@keyframes swim6 {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+
+  5% {
+    transform: translate(-30px, -5px) scaleX(-1);
+  }
+
+  10% {
+    transform: translate(-60px, 0) scaleX(-1);
+  }
+
+  15% {
+    transform: translate(-90px, 5px) scaleX(-1);
+  }
+
+  20% {
+    transform: translate(-120px, 0) scaleX(-1);
+  }
+
+  25% {
+    transform: translate(-150px, -5px) scaleX(-1);
+  }
+
+  30% {
+    transform: translate(-180px, 0) scaleX(-1);
+  }
+
+  35% {
+    transform: translate(-210px, 5px) scaleX(-1);
+  }
+
+  40% {
+    transform: translate(-240px, 0) scaleX(-1);
+  }
+
+  45% {
+    transform: translate(-270px, -5px) scaleX(-1);
+  }
+
+  50% {
+    transform: translate(-300px, 0) scaleX(1);
+  }
+
+  55% {
+    transform: translate(-270px, 5px) scaleX(1);
+  }
+
+  60% {
+    transform: translate(-240px, 0) scaleX(1);
+  }
+
+  65% {
+    transform: translate(-210px, -5px) scaleX(1);
+  }
+
+  70% {
+    transform: translate(-180px, 0) scaleX(1);
+  }
+
+  75% {
+    transform: translate(-150px, 5px) scaleX(1);
+  }
+
+  80% {
+    transform: translate(-120px, 0) scaleX(1);
+  }
+
+  85% {
+    transform: translate(-90px, -5px) scaleX(1);
+  }
+
+  90% {
+    transform: translate(-60px, 0) scaleX(1);
+  }
+
+  95% {
+    transform: translate(-30px, 5px) scaleX(1);
+  }
+
+  100% {
+    transform: translate(0, 0) scaleX(-1);
+  }
+}
+
 @keyframes swim7 {
   0% {
     transform: translate(0, 0) scaleX(-1);
@@ -886,16 +898,12 @@ footer {
   }
 }
 
-        
-
-
-
 .Kejserfisk {
   animation: swim5 15s linear infinite;
 }
 
 .Klovnefisk {
- animation: swim2 5s linear infinite;
+  animation: swim2 5s linear infinite;
 }
 
 .Kirurgfisk {
@@ -921,4 +929,3 @@ footer {
 .Kuglefisk {
   animation: swim3 20s linear infinite;
 }
-
