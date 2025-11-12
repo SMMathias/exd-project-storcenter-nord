@@ -932,6 +932,7 @@ footer {
 
 #characterSelect {
   display: flex;
+  gap: 5rem;
 }
 
 .characterOption img {
@@ -947,5 +948,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+
+.characterOption.selected {
+  outline: 3px solid #00ffff;
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
