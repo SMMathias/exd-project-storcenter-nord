@@ -134,8 +134,15 @@ choose.addEventListener("click", function () {
 });
 
 backToMenu.addEventListener("click", function () {
+  gameRunning = false;
+  clearInterval(starInterval);
+  starInterval = null;
+  points = 0;
+  stars = [];
   infoScreen.classList.remove("hidden");
   gameScreen.classList.add("hidden");
+  select.classList.add("hidden");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 const characters = [
@@ -250,12 +257,16 @@ canvas.width = 400;
 canvas.height = 600;
 
 let points = 0;
+let gameRunning = false;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
 let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
 let fishWidth = 70;
 let fishHeight = 70;
 let fishSpeed = 6;
+let starInterval;
+let lastStarTime = 0;
+let starSpawnDelay = 1000;
 
 const fishImg = new Image();
 const starImg = new Image();
@@ -313,11 +324,20 @@ function checkCollision() {
 }
 
 // looper bare spillet igennem
-function gameLoop() {
-  updateStars(); // bevæg stjernerne
-  checkCollision(); // tjek om fisken rammer en
-  draw(); // tegn alt igen (fisk, stjerner, score) uendeligt yuurrrrr
-  requestAnimationFrame(gameLoop); // kør funktionen igen + 60 fps
+function gameLoop(timestamp) {
+  if (!gameRunning) return;
+
+  // Spawn en stjerne hver 1000 ms
+  if (timestamp - lastStarTime > starSpawnDelay) {
+    createStar();
+    lastStarTime = timestamp;
+  }
+
+  updateStars();
+  checkCollision();
+  draw();
+
+  requestAnimationFrame(gameLoop);
 }
 
 // lille smule eventlisteners
@@ -350,12 +370,23 @@ canvas.addEventListener("touchmove", (e) => {
 });
 
 function startGame() {
-  fishImg.src = `gif-copy/${characters[selectedFishIndex].gif}`;
-  if (!fishImg.src) {
-    console.warn("Kunne ikke finde gif i Image/. Tjek filnavn og sti.");
+  // Stop alt eksisterende før nyt spil
+  gameRunning = false;
+  if (starInterval) {
+    clearInterval(starInterval);
+    starInterval = null;
   }
+  stars = [];
+  points = 0;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Start nyt spil
+  gameRunning = true;
+  const chosenFish = characters[selectedFishIndex];
+  fishImg.src = `gif-copy/${chosenFish.gif}`;
+
   fishImg.onload = () => {
-    setInterval(createStar, 1000); // stjerne hvet sekund
+    lastStarTime = 0;
     gameLoop();
   };
 }
