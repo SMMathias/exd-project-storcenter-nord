@@ -151,12 +151,10 @@ footer {
 /* Spillet  */
 #gameScreen {
   display: flex;
-  flex-direction: column;
-  /* ADD THIS - stacks items vertically */
+  flex-direction: column; /* knap under screen */
   justify-content: center;
   align-items: center;
-  /* ADD THIS - space between canvas and button */
-  gap: 10px;
+  gap: 10px; /* gap mellem button */
   width: 100%;
   height: 100vh;
 }
@@ -180,6 +178,10 @@ footer {
 .Sandspiser-gobi img {
   transform: scaleX(-1);
 }
+
+
+
+
 
 /* KEYFRAMES-ANIMATIONS FOR FISH */
 
