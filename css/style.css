@@ -936,14 +936,18 @@ footer {
 
 #characterSelect {
   display: flex;
+  flex-direction: column;
   margin-top: 120px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
+  height: calc(100vh - 200px);
 }
 
 .characterContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 5rem;
   align-items: flex-start;
   justify-content: center;
@@ -976,6 +980,12 @@ footer {
 #playBtn {
   margin-top: 1rem;
   order: 2;
+}
+
+#chooseFish {
+  order: 3;
+  margin-top: auto;
+  margin-bottom: 2rem;
 }
 
 .characterOption.selected {
