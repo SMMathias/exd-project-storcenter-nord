@@ -130,7 +130,7 @@ const soundClickBubble = new Audio();
 soundClickBubble.src = "audio/foley-sound/clicking-character-sound.wav";
 
 startBtn.addEventListener("click", function () {
-  soundClickBubble.play();
+   soundClickBubble.play();
   infoScreen.classList.add("hidden");
   select.classList.remove("hidden");
   startBtn.classList.add("hidden");
@@ -264,8 +264,8 @@ const canvas = document.getElementById("gameCanvas");
 
 // Gør spillet 2d :)
 const ctx = canvas.getContext("2d");
-canvas.width = 400;
-canvas.height = 600;
+canvas.width = 600;
+canvas.height = 800;
 
 let points = 0;
 let gameRunning = false;
