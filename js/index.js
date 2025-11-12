@@ -114,6 +114,30 @@ const fishCards = [
   },
 ];
 
+const gameScreen = document.getElementById("gameScreen");
+const infoScreen = document.getElementById("infoScreen");
+const startBtn = document.getElementById("startBtn");
+const backToMenu = document.getElementById("backToMenu");
+const select = document.getElementById("characterSelect");
+const choose = document.getElementById("chooseFish");
+
+// knapper
+
+startBtn.addEventListener("click", function () {
+  infoScreen.classList.add("hidden");
+  select.classList.remove("hidden");
+});
+
+choose.addEventListener("click", function () {
+  select.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
+});
+
+backToMenu.addEventListener("click", function () {
+  infoScreen.classList.remove("hidden");
+  gameScreen.classList.add("hidden");
+});
+
 const characters = [
   {
     characName: "Kejserfisk",
@@ -184,6 +208,31 @@ window.addEventListener("click", (e) => {
   }
 });
 
+// character selection
+let selectedFishIndex = 0;
+document.querySelectorAll(".characterOption").forEach((option, index) => {
+  option.addEventListener("click", () => {
+    selectedFishIndex = index;
+  });
+});
+
+characters.forEach((fish, index) => {
+  const option = document.createElement("div"); // laver et nyt div-element
+  option.classList.add("characterOption"); // giver det klassen
+  option.innerHTML = `
+    <img src="img/${fish.image}" alt="${fish.characName}">
+    <p>${fish.characName}</p>
+  `;
+
+  // når man klikker, vælges den fisk
+  option.addEventListener("click", () => {
+    selectedFishIndex = index;
+    console.log(`Du valgte: ${fish.characName}`);
+  });
+
+  select.appendChild(option); // tilføj til HTML’en
+});
+
 // Spillet
 
 // dom-manipulation til game setup
@@ -206,7 +255,7 @@ let fishSpeed = 6;
 
 // selectedFishIndex kan den hedde, men den gør, at det er fisken vi vægler :)
 const fishImg = new Image();
-fishImg.src = "img/gobi.svg"; // `img/${fishCards[selectedFishIndex].gif}`; indsæt gif ind i array
+fishImg.src = `img/${characters[selectedFishIndex].gif}`;
 
 const starImg = new Image();
 starImg.src = "img/points.svg";
@@ -299,22 +348,4 @@ canvas.addEventListener("touchmove", (e) => {
   // Begræns fisken så den ikke går udenfor canvas
   if (fishX < 0) fishX = 0;
   if (fishX > canvas.width - fishWidth) fishX = canvas.width - fishWidth;
-});
-
-const gameScreen = document.getElementById("gameScreen");
-const infoScreen = document.getElementById("infoScreen");
-const startBtn = document.getElementById("startBtn");
-const backToMenu = document.getElementById("backToMenu");
-const select = document.getElementById("characterSelect");
-
-// knapper
-
-startBtn.addEventListener("click", function () {
-  infoScreen.classList.add("hidden");
-  gameScreen.classList.remove("hidden");
-});
-
-backToMenu.addEventListener("click", function () {
-  infoScreen.classList.remove("hidden");
-  gameScreen.classList.add("hidden");
 });
