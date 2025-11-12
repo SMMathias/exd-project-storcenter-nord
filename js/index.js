@@ -125,6 +125,7 @@ const choose = document.getElementById("chooseFish");
 startBtn.addEventListener("click", function () {
   infoScreen.classList.add("hidden");
   select.classList.remove("hidden");
+  startBtn.classList.add("hidden");
 });
 
 choose.addEventListener("click", function () {
