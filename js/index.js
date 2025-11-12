@@ -236,7 +236,6 @@ characters.forEach((fish, index) => {
     <p>${fish.characName}</p>
   `;
 
-  let selectedFishIndex = 0;
   option.addEventListener("click", () => {
     selectedFishIndex = index;
     document
@@ -263,9 +262,9 @@ let points = 0;
 let gameRunning = false;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
-let fishY = canvas.height - 120; // lidt over bunden sådan ja kan altid justeresr
-let fishWidth = 70;
-let fishHeight = 70;
+let fishY = canvas.height - 300; // lidt over bunden sådan ja kan altid justeresr
+let fishWidth = 220;
+let fishHeight = 220;
 let fishSpeed = 6;
 let starInterval;
 let lastStarTime = 0;
@@ -280,7 +279,7 @@ starImg.src = "img/points.svg";
 function createStar() {
   const x = Math.random() * (canvas.width - 40);
   const y = -40;
-  stars.push({ x, y, size: 30 });
+  stars.push({ x, y, size: 50 });
 }
 
 // tegner fisken (gif) + array skal opdateres :=)
