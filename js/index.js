@@ -172,10 +172,35 @@ const characters = [
     gif: "gobifisk/gobifisk-gif-done.gif",
   },
   {
-    characName: "Kejserfisk",
-    image: "kejserfisk.svg",
+    characName: "Rævefjæs",
+    image: "raevefjaes.svg",
     gif: "rabbitfish/rabbitface-gif.gif",
   },
+  {
+    characName: "Kejserfisk",
+    image: "kejserfisk.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  },
+  {
+    characName: "Blå Cromis",
+    image: "chromis.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  },
+  {
+    characName: "Kirurgfisk",
+    image: "kirurgfisk.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  },
+  {
+    characName: "Klovnefisk",
+    image: "klovnefisk.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  },
+  {
+    characName: "Pudsefisk",
+    image: "pudsefisk.svg",
+    gif: "gobifisk/gobifisk-gif-done.gif",
+  }
 ];
 
 let selectedFishIndex = 0;
@@ -239,6 +264,7 @@ window.addEventListener("click", (e) => {
 });
 
 // character selection
+const characterContainer = document.querySelector(".characterContainer");
 characters.forEach((fish, index) => {
   const option = document.createElement("div"); // laver et nyt div-element
   option.classList.add("characterOption"); // giver det klassen
@@ -256,7 +282,7 @@ characters.forEach((fish, index) => {
     console.log(`Du valgte: ${fish.characName}`);
   });
 
-  select.appendChild(option); // tilføj til HTML’en
+  characterContainer.appendChild(option); // tilføj til HTML’en
 });
 
 // Spillet
