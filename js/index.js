@@ -120,10 +120,10 @@ const positions = {
   Kejserfisk: { left: "10%", top: "20%" },
   Klovnefisk: { left: "45%", top: "40%" },
   Kirurgfisk: { left: "65%", top: "40%" },
-  Pudsefisk: { left: "25%", top: "55%" },
-  "Blå chromis": { left: "75%", top: "25%" },
-  Rævefjæs: { left: "15%", top: "70%" },
-  "Sandspiser-gobi": { left: "10%", top: "90%", },
+  Pudsefisk: { left: "25%", top: "64%" },
+  "Blå-chromis": { left: "75%", top: "10%" },
+  Rævefjæs: { left: "70%", top: "76%" },
+  "Sandspiser-gobi": { left: "10%", top: "98%", },
   Kuglefisk: { left: "80%", top: "60%" },
 };
 
