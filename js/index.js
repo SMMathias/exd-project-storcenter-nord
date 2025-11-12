@@ -129,6 +129,10 @@ startBtn.addEventListener("click", function () {
 });
 
 choose.addEventListener("click", function () {
+  if (selectedFishIndex === null) {
+    alert("Vælg en fisk først 🐟");
+    return;
+  }
   select.classList.add("hidden");
   gameScreen.classList.remove("hidden");
   startGame();
@@ -233,15 +237,12 @@ characters.forEach((fish, index) => {
   `;
 
   let selectedFishIndex = 0;
-  document.querySelectorAll(".characterOption").forEach((option, index) => {
-    option.addEventListener("click", () => {
-      selectedFishIndex = index;
-    });
-  });
-
-  // når man klikker, vælges den fisk
   option.addEventListener("click", () => {
     selectedFishIndex = index;
+    document
+      .querySelectorAll(".characterOption")
+      .forEach((opt) => opt.classList.remove("selected"));
+    option.classList.add("selected");
     console.log(`Du valgte: ${fish.characName}`);
   });
 
