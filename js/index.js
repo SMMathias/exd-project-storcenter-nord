@@ -131,7 +131,6 @@ soundClickBubble.src = "audio/foley-sound/clicking-character-sound.wav";
 
 startBtn.addEventListener("click", function () {
   soundClickBubble.play();
-  console.log("Lyden afspilles nu!");
   infoScreen.classList.add("hidden");
   select.classList.remove("hidden");
   startBtn.classList.add("hidden");
@@ -331,6 +330,7 @@ function checkCollision() {
     ) {
       stars.splice(i, 1); // her fjernes stjernen, hvis der er collision
       points++; // giver pointsssss
+      soundCoin.play();
     }
   });
 }
