@@ -114,6 +114,20 @@ const fishCards = [
   },
 ];
 
+const characters = [
+  {
+    characName: "Kejserfisk",
+    image: "kejserfisk.svg",
+    gif: "rabbitface-gif.gif",
+  },
+  { characName: "Gobi", image: "gobi.svg", gif: "gobifisk-gif-done.gif" },
+  {
+    characName: "Kuglefisk",
+    image: "kuglefisk.svg",
+    gif: "kuglefisk-gif-done.gif",
+  },
+];
+
 const fishContainer = document.getElementById("infoScreen");
 
 const positions = {
@@ -291,6 +305,7 @@ const gameScreen = document.getElementById("gameScreen");
 const infoScreen = document.getElementById("infoScreen");
 const startBtn = document.getElementById("startBtn");
 const backToMenu = document.getElementById("backToMenu");
+const select = document.getElementById("characterSelect");
 
 // knapper
 
