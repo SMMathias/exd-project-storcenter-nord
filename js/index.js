@@ -122,7 +122,16 @@ const select = document.getElementById("characterSelect");
 const choose = document.getElementById("chooseFish");
 // knapper
 
+// sounds for game 
+const soundCoin = new Audio ();
+soundCoin.src = "audio/foley-sound/coin-collect.wav";
+
+const soundClickBubble = new Audio();
+soundClickBubble.src = "audio/foley-sound/clicking-character-sound.wav";
+
 startBtn.addEventListener("click", function () {
+  soundClickBubble.play();
+  console.log("Lyden afspilles nu!");
   infoScreen.classList.add("hidden");
   select.classList.remove("hidden");
   startBtn.classList.add("hidden");
