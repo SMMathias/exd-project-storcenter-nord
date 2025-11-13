@@ -226,8 +226,6 @@ const modalSize = document.getElementById("modalSize");
 const modalFact1 = document.getElementById("modalFact1");
 const modalFact2 = document.getElementById("modalFact2");
 
-
-
 fishCards.forEach((fish) => {
   const card = document.createElement("div");
   card.classList.add("fishCard");
