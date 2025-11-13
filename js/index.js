@@ -298,8 +298,8 @@ let gameRunning = false;
 let stars = [];
 let fishX = canvas.width / 2 - 25; // i midten af canvaset
 let fishY = canvas.height - 300; // lidt over bunden sådan ja kan altid justeresr
-let fishWidth = 70;
-let fishHeight = 70;
+let fishWidth = 200;
+let fishHeight = 200;
 let fishSpeed = 6;
 let starInterval;
 let lastStarTime = 0;
